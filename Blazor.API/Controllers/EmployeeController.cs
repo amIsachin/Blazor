@@ -25,9 +25,9 @@ namespace Blazor.API.Controllers
         public async Task<IActionResult> GetAllEmployees()
         {
             try
-            {
+            { 
                 var employees = await _employeeRepository.GetAllEmployees();
-
+                
                 if (employees is null)
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while fetching the all employees from the Blazor database {employees}");

@@ -1,0 +1,12 @@
+S:\.Net\web-apps\Blazor\Domain.Web\bin\Debug\net6.0\Domain.Web.deps.json
+S:\.Net\web-apps\Blazor\Domain.Web\bin\Debug\net6.0\Domain.Web.dll
+S:\.Net\web-apps\Blazor\Domain.Web\bin\Debug\net6.0\Domain.Web.pdb
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.csproj.AssemblyReference.cache
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.AssemblyInfoInputs.cache
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.AssemblyInfo.cs
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.csproj.CoreCompileInputs.cache
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.dll
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\refint\Domain.Web.dll
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\Domain.Web.pdb
+S:\.Net\web-apps\Blazor\Domain.Web\obj\Debug\net6.0\ref\Domain.Web.dll
