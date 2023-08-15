@@ -1,4 +1,35 @@
 ﻿@page "/"
+@using Domain.Web.Entities;
 @inherits EmployeeListBase
 
 <h3>Employee List</h3>
+
+@if (EmployeeEntityWeb == null)
+{
+    <p>Please wait data is comming</p>
+}
+else
+{
+    <Grid TItem="EmployeeEntityWeb" HeaderRowCssClass="bg-primary text-white border-bottom-0" PaginationItemsTextFormat="{0} - {1} of {2} items" ItemsPerPageText="Items per page" PageSizeSelectorItems="new int[3] { 10, 20, 50 }" class="table table-hover table-bordered table-striped" DataProvider="EmployeesDataProvider">
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="Name">
+            @context.Name
+        </GridColumn>
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="Age">
+            @context.Age
+        </GridColumn>
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="Salary">
+            @context.Salary
+        </GridColumn>
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="City">
+            @context.City
+        </GridColumn>
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="Created date">
+            @context.CreatedOn.ToString("dd/MM/yyyy")
+        </GridColumn>
+        <GridColumn TItem="EmployeeEntityWeb" HeaderText="Actions">
+           <CustomModal Id="@context.EmployeeId.ToString()"></CustomModal>
+        </GridColumn>
+    </Grid>
+}
+
+<Preload />

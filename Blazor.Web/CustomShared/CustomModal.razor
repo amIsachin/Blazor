@@ -1,0 +1,62 @@
+﻿@page "/modal/{Id}"
+@using Domain.Web.Entities;
+
+<Button Color="ButtonColor.Primary" @onclick="() => xlModal.ShowAsync()">Update Employee</Button>
+
+<Modal @ref="xlModal" title="Update Employee" Size="ModalSize.ExtraLarge">
+    <BodyTemplate>
+        <EditForm Model="EmployeeEntityWeb" OnValidSubmit="HandleOnValidSubmit">
+
+            <div class="mb-3">
+                <label class="form-label">Enter Name</label>
+                <InputText class="form-control" @bind-Value="EmployeeEntityWeb.Name" DisplayName="Please enter name"></InputText>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Enter Age</label>
+                <InputNumber class="form-control" @bind-Value="EmployeeEntityWeb.Age" DisplayName="Please enter name"></InputNumber>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Enter Salary</label>
+                <InputNumber class="form-control" @bind-Value="EmployeeEntityWeb.Salary" DisplayName="Please enter name"></InputNumber>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Enter City</label>
+                <InputText class="form-control" @bind-Value="EmployeeEntityWeb.City" DisplayName="Please enter name"></InputText>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Enter Name</label>
+                <InputText class="form-control" @bind-Value="EmployeeEntityWeb.Name" DisplayName="Please enter name"></InputText>
+            </div>
+
+            <div class="mb-3">
+               <Button Color="ButtonColor.Primary">Update</Button>
+            </div>
+
+        </EditForm>
+    </BodyTemplate>
+</Modal>
+
+
+@code {
+
+    [Parameter]
+    public string Id { get; set; } = string.Empty;
+
+    public Modal xlModal = default!;
+
+    private EditContext editContext = default!;
+
+    [Parameter]
+    public EmployeeEntityWeb EmployeeEntityWeb { get; set; } = new();
+
+    public void HandleOnValidSubmit()
+    {
+        editContext = new EditContext(EmployeeEntityWeb);
+    }
+
+
+}

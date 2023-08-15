@@ -10,4 +10,13 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Blazor.Bootstrap" Version="1.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Web\Application.Web.csproj" />
+    <ProjectReference Include="..\Domain.Web\Domain.Web.csproj" />
+  </ItemGroup>
+
 </Project>

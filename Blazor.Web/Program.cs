@@ -1,8 +1,18 @@
+using Application.Web.Repositories.Implements;
+using Application.Web.Repositories.Interfaces;
+using BlazorBootstrap;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddBlazorBootstrap();
+builder.Services.AddHttpClient<IEmployeeRepository, EmployeeRepository>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:44355/");
+});
+
 
 var app = builder.Build();
 

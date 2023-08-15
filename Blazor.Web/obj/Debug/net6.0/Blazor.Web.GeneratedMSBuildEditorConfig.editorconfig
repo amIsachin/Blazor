@@ -20,12 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/.Net/web-apps/Blazor/Blazor.Web/Pages/EmployeeList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVMaXN0LnJhem9y
+[S:/.Net/web-apps/Blazor/Blazor.Web/CustomShared/CustomModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q3VzdG9tU2hhcmVkXEN1c3RvbU1vZGFsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[S:/.Net/web-apps/Blazor/Blazor.Web/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[S:/.Net/web-apps/Blazor/Blazor.Web/Pages/EmployeeList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/.Net/web-apps/Blazor/Blazor.Web/_Imports.razor]

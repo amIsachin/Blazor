@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "Domain.Web/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.Web.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.Web.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Domain.Web/1.0.0": {
+      "type": "project",
+      "path": "../Domain.Web/Domain.Web.csproj",
+      "msbuildProject": "../Domain.Web/Domain.Web.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "Domain.Web >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\amIsa\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj",
+      "projectName": "Application.Web",
+      "projectPath": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj",
+      "packagesPath": "C:\\Users\\amIsa\\.nuget\\packages\\",
+      "outputPath": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\amIsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj": {
+              "projectPath": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

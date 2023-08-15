@@ -4,6 +4,65 @@
     "S:\\.Net\\web-apps\\Blazor\\Blazor.Web\\Blazor.Web.csproj": {}
   },
   "projects": {
+    "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj",
+        "projectName": "Application.Web",
+        "projectPath": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj",
+        "packagesPath": "C:\\Users\\amIsa\\.nuget\\packages\\",
+        "outputPath": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\amIsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj": {
+                "projectPath": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "S:\\.Net\\web-apps\\Blazor\\Blazor.Web\\Blazor.Web.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -23,6 +82,77 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj": {
+                "projectPath": "S:\\.Net\\web-apps\\Blazor\\Application.Web\\Application.Web.csproj"
+              },
+              "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj": {
+                "projectPath": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[1.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj",
+        "projectName": "Domain.Web",
+        "projectPath": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\Domain.Web.csproj",
+        "packagesPath": "C:\\Users\\amIsa\\.nuget\\packages\\",
+        "outputPath": "S:\\.Net\\web-apps\\Blazor\\Domain.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\amIsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,9 +182,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
