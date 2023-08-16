@@ -48,4 +48,35 @@ public class EmployeeRepository : IEmployeeRepository
 
         return _employees;
     }
+
+
+    /// <summary>
+    /// This method is responsible to get employee by id from Blazor data base.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    public async Task<EmployeeEntity> GetEmployeeById(int id)
+    {
+        EmployeeEntity employee = new EmployeeEntity();
+        using SqlConnection conn = new SqlConnection(DataBaseConnection.GetConnectionString());
+        string query = $"SELECT * FROM Employee WHERE EmployeeId = {id}";
+        using SqlCommand cmd = new SqlCommand(query, conn);
+        await conn.OpenAsync();
+        cmd.Parameters.AddWithValue("EmployeeId", id);
+
+        SqlDataReader dr = await cmd.ExecuteReaderAsync();
+
+        while (await dr.ReadAsync())
+        {
+            employee.EmployeeId = dr.GetInt32(0);
+            employee.Name = dr.GetString(1);
+            employee.Age = dr.GetInt32(2);
+            employee.Salary = dr.GetInt32(3);
+            employee.City = dr.GetString(4);
+            employee.CreatedOn = dr.GetDateTime(5);
+        }
+
+        return employee;
+
+    }
 }

@@ -46,8 +46,6 @@ public class EmployeeListBase : ComponentBase
     /// <returns></returns>
     private async Task LoadEmployee()
     {
-        Thread.Sleep(2000);
-
         EmployeeEntityWeb = (await EmployeeRepository.GetAllEmployees()).ToList();
     }
     

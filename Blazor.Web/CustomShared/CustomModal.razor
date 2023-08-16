@@ -33,7 +33,7 @@
             </div>
 
             <div class="mb-3">
-               <Button Color="ButtonColor.Primary">Update</Button>
+                <Button Color="ButtonColor.Primary">Update</Button>
             </div>
 
         </EditForm>
@@ -46,12 +46,20 @@
     [Parameter]
     public string Id { get; set; } = string.Empty;
 
+    [Inject]
+    public IEmployeeRepository EmployeeRepository { get; set; }
+
     public Modal xlModal = default!;
 
     private EditContext editContext = default!;
 
-    [Parameter]
     public EmployeeEntityWeb EmployeeEntityWeb { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        EmployeeEntityWeb = await EmployeeRepository.GetEmployeeById(int.Parse(Id));
+    }
+
 
     public void HandleOnValidSubmit()
     {
