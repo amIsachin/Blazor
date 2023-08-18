@@ -103,6 +103,9 @@
             "projectReferences": {
               "S:\\.Net\\web-apps\\Blazor\\Application\\Application.csproj": {
                 "projectPath": "S:\\.Net\\web-apps\\Blazor\\Application\\Application.csproj"
+              },
+              "S:\\.Net\\web-apps\\Blazor\\Domain\\Domain.csproj": {
+                "projectPath": "S:\\.Net\\web-apps\\Blazor\\Domain\\Domain.csproj"
               }
             }
           }

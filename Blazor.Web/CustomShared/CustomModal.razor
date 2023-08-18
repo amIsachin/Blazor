@@ -5,7 +5,7 @@
 
 <Modal @ref="xlModal" title="Update Employee" Size="ModalSize.ExtraLarge">
     <BodyTemplate>
-        <EditForm Model="EmployeeEntityWeb" OnValidSubmit="HandleOnValidSubmit">
+        <EditForm EditContext="@editContext" OnSubmit="HandleOnValidSubmit">
 
             <div class="mb-3">
                 <label class="form-label">Enter Name</label>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="mb-3">
-                <Button Color="ButtonColor.Primary">Update</Button>
+                <Button Type="ButtonType.Submit" Color="ButtonColor.Primary">Update Employee</Button>
             </div>
 
         </EditForm>
@@ -57,13 +57,15 @@
 
     protected override async Task OnInitializedAsync()
     {
+
+        editContext = new EditContext(EmployeeEntityWeb);
+
         EmployeeEntityWeb = await EmployeeRepository.GetEmployeeById(int.Parse(Id));
     }
 
 
     public void HandleOnValidSubmit()
     {
-        editContext = new EditContext(EmployeeEntityWeb);
     }
 
 

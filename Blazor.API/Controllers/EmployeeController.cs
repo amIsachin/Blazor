@@ -1,4 +1,5 @@
 ﻿using Application.Repositories.Interfaces;
+using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blazor.API.Controllers
@@ -66,6 +67,32 @@ namespace Blazor.API.Controllers
             }
         }
 
+
+        /// <summary>
+        /// This method is responsible to update existing employee from *Blazor database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="employeeEntity"></param>
+        /// <returns></returns>
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateEmployee([FromRoute] int id, [FromBody] EmployeeEntity employeeEntity )
+        {
+            try
+            {
+                var isUpdated = await _employeeRepository.UpdateEmployee(id, employeeEntity);
+
+                if (isUpdated is false)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database");
+                }
+
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database {ex.Message}");
+            }
+        }
 
     }
 }

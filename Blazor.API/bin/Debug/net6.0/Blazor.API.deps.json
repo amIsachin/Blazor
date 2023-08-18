@@ -9,6 +9,7 @@
       "Blazor.API/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Domain": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {

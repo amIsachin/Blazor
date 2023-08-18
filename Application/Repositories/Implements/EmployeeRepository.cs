@@ -79,4 +79,27 @@ public class EmployeeRepository : IEmployeeRepository
         return employee;
 
     }
+
+
+    /// <summary>
+    /// This method is responsible to to update existing employee.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="employee"></param>
+    /// <returns></returns>
+    public async Task<bool> UpdateEmployee(int id, EmployeeEntity employee)
+    {
+        using SqlConnection conn = new SqlConnection(DataBaseConnection.GetConnectionString());
+        string query = $"UPDATE Employee SET Name = '{employee.Name}', Age = {employee.Age}, Salary = {employee.Salary}, City = '{employee.City}' WHERE EmployeeId = {id}";
+        using SqlCommand cmd = new SqlCommand(query, conn);
+        await conn.OpenAsync();
+        bool isUpdated = await cmd.ExecuteNonQueryAsync() > 0;
+
+        if (isUpdated is true)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
