@@ -7,5 +7,7 @@ namespace Application.Web.Repositories.Interfaces
         Task<IEnumerable<EmployeeEntityWeb>> GetAllEmployees();
 
         Task<EmployeeEntityWeb> GetEmployeeById(int id);
+
+        Task<bool> UpdateEmployee(int id, EmployeeEntityWeb employeeEntityWeb);
     }
 }

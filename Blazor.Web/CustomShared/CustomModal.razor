@@ -1,5 +1,6 @@
 ﻿@page "/modal/{Id}"
 @using Domain.Web.Entities;
+@inject NavigationManager _navManager;
 
 <Button Color="ButtonColor.Primary" @onclick="() => xlModal.ShowAsync()">Update Employee</Button>
 
@@ -28,11 +29,6 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Enter Name</label>
-                <InputText class="form-control" @bind-Value="EmployeeEntityWeb.Name" DisplayName="Please enter name"></InputText>
-            </div>
-
-            <div class="mb-3">
                 <Button Type="ButtonType.Submit" Color="ButtonColor.Primary">Update Employee</Button>
             </div>
 
@@ -55,6 +51,10 @@
 
     public EmployeeEntityWeb EmployeeEntityWeb { get; set; } = new();
 
+    /// <summary>
+    /// OnInitializedAsync
+    /// </summary>
+    /// <returns></returns>
     protected override async Task OnInitializedAsync()
     {
 
@@ -64,8 +64,19 @@
     }
 
 
-    public void HandleOnValidSubmit()
+    /// <summary>
+    /// This event handler is responsible for update existing employee.
+    /// </summary>
+    /// <returns></returns>
+    public async Task HandleOnValidSubmit()
     {
+        var isUpdated = await EmployeeRepository.UpdateEmployee(int.Parse(Id), EmployeeEntityWeb);
+
+        if (isUpdated is true)
+        {
+            _navManager.NavigateTo("/", true);
+        }
+
     }
 
 

@@ -34,4 +34,25 @@ public class EmployeeRepository : IEmployeeRepository
     {
         return await _httpClient.GetFromJsonAsync<EmployeeEntityWeb>($"api/employee/GetEmployeeById/{id}");
     }
+
+
+    /// <summary>
+    /// This method is resposible for updated existing employee from API.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="employeeEntityWeb"></param>
+    /// <returns></returns>
+    public async Task<bool> UpdateEmployee(int id, EmployeeEntityWeb employeeEntityWeb)
+    {
+        HttpResponseMessage isUpdated = await _httpClient.PutAsJsonAsync($"api/employee/UpdateEmployee/" +id, employeeEntityWeb);
+
+        if (isUpdated.IsSuccessStatusCode is true)
+        {
+            return true;
+        }
+
+        return false;
+
+
+    }
 }

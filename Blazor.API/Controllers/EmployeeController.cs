@@ -93,6 +93,5 @@ namespace Blazor.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database {ex.Message}");
             }
         }
-
     }
 }
