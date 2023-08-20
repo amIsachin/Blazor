@@ -93,5 +93,32 @@ namespace Blazor.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database {ex.Message}");
             }
         }
+
+
+        /// <summary>
+        /// This method is responsible to delte existing employee from *Blazor database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteEmployee([FromRoute] int id)
+        {
+            try
+            {
+                var isUpdated = await _employeeRepository.DeleteEmployee(id);
+
+                if (isUpdated is false)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database");
+                }
+
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while deleting the existing employees from the Blazor database {ex.Message}");
+            }
+        }
+
     }
 }

@@ -26,4 +26,12 @@ public interface IEmployeeRepository
     /// <param name="employee"></param>
     /// <returns></returns>
     Task<bool> UpdateEmployee(int id, EmployeeEntity employee);
+
+
+    /// <summary>
+    /// This method is responsible to Delete existing employee.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task<bool> DeleteEmployee(int id);
 }

@@ -102,4 +102,36 @@ public class EmployeeRepository : IEmployeeRepository
 
         return false;
     }
+
+
+
+    /// <summary>
+    /// This method is responsible to Delete existing employee.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    public async Task<bool> DeleteEmployee(int id)
+    {
+        using SqlConnection conn = new SqlConnection(DataBaseConnection.GetConnectionString());
+        string query = $"DELETE FROM Employee WHERE EmployeeId = {id}";
+        using SqlCommand cmd = new SqlCommand(query, conn);
+        await conn.OpenAsync();
+
+        try
+        {
+            var idDeleted = await cmd.ExecuteNonQueryAsync() > 0;
+
+            if (idDeleted is true)
+            {
+                return true;
+            }
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+
+        return false;
+
+    }
 }
