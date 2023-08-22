@@ -44,7 +44,7 @@ public class EmployeeRepository : IEmployeeRepository
     /// <returns></returns>
     public async Task<bool> UpdateEmployee(int id, EmployeeEntityWeb employeeEntityWeb)
     {
-        HttpResponseMessage isUpdated = await _httpClient.PutAsJsonAsync($"api/employee/UpdateEmployee/" +id, employeeEntityWeb);
+        HttpResponseMessage isUpdated = await _httpClient.PutAsJsonAsync($"api/employee/UpdateEmployee/" + id, employeeEntityWeb);
 
         if (isUpdated.IsSuccessStatusCode is true)
         {
@@ -54,5 +54,18 @@ public class EmployeeRepository : IEmployeeRepository
         return false;
 
 
+    }
+
+
+    public async Task<bool> DeleteEmployee(int id)
+    {
+        HttpResponseMessage isDeleted = await _httpClient.DeleteAsync($"api/employee/DeleteEmployee/{id}");
+
+        if (isDeleted.IsSuccessStatusCode is true)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

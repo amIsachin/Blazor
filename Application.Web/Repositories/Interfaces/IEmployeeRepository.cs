@@ -9,5 +9,7 @@ namespace Application.Web.Repositories.Interfaces
         Task<EmployeeEntityWeb> GetEmployeeById(int id);
 
         Task<bool> UpdateEmployee(int id, EmployeeEntityWeb employeeEntityWeb);
+
+        Task<bool> DeleteEmployee(int id);
     }
 }

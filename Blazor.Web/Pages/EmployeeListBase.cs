@@ -15,7 +15,12 @@ public class EmployeeListBase : ComponentBase
 
     public IEnumerable<EmployeeEntityWeb> EmployeeEntityWeb { get; set; }
 
-  
+    protected ConfirmDialog dialog = null!;
+
+    [Inject]
+    public NavigationManager _navigationManager { get; set; }
+
+
 
     /// <summary>
     /// 
@@ -48,7 +53,7 @@ public class EmployeeListBase : ComponentBase
     {
         EmployeeEntityWeb = (await EmployeeRepository.GetAllEmployees()).ToList();
     }
-    
+
 
     /// <summary>
     /// This method is responsible to display list of employee using grid.
@@ -60,5 +65,37 @@ public class EmployeeListBase : ComponentBase
         return await Task.FromResult(request.ApplyTo(EmployeeEntityWeb));
     }
 
-  
+
+
+    protected async Task ShowDeleteEmployeeConfirmationAsync(int id)
+    {
+        var options = new ConfirmDialogOptions
+        {
+            YesButtonText = "Delete",
+            YesButtonColor = ButtonColor.Danger,
+            NoButtonText = "CANCEL",
+            NoButtonColor = ButtonColor.Primary
+        };
+
+        var confirmation = await dialog.ShowAsync(
+            title: "Warning ?",
+            message1: "Do you want to proceed?",
+            confirmDialogOptions: options);
+
+        if (confirmation is true)
+        {
+            var isDeleted = await EmployeeRepository.DeleteEmployee(id);
+
+            if (isDeleted is true)
+            {
+                _navigationManager.NavigateTo("/", true);
+            }
+        }
+        else
+        {
+
+        }
+    }
+
+
 }

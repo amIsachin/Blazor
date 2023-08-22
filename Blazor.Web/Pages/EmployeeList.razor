@@ -27,9 +27,12 @@ else
             @context.CreatedOn.ToString("dd/MM/yyyy")
         </GridColumn>
         <GridColumn TItem="EmployeeEntityWeb" HeaderText="Actions">
-           <CustomModal Id="@context.EmployeeId.ToString()"></CustomModal>
+            <CustomModal Id="@context.EmployeeId.ToString()"></CustomModal>
+
+            <Button Color="ButtonColor.Danger" @onclick="() => ShowDeleteEmployeeConfirmationAsync(context.EmployeeId)"> Delete Employee </Button>
         </GridColumn>
     </Grid>
 }
 
+<ConfirmDialog @ref="dialog" />
 <Preload />
