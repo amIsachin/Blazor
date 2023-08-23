@@ -120,5 +120,26 @@ namespace Blazor.API.Controllers
             }
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNewEmployee([FromBody] EmployeeEntity employeeEntity)
+        {
+            try
+            {
+                var isUpdated = await _employeeRepository.CreateNewEmployee(employeeEntity);
+
+                if (isUpdated is false)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while updating the existing employees from the Blazor database");
+                }
+
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error occured while deleting the existing employees from the Blazor database {ex.Message}");
+            }
+        }
+
     }
 }

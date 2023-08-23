@@ -134,4 +134,31 @@ public class EmployeeRepository : IEmployeeRepository
         return false;
 
     }
+
+
+    public async Task<bool> CreateNewEmployee(EmployeeEntity employee)
+    {
+        using SqlConnection conn = new SqlConnection(DataBaseConnection.GetConnectionString());
+        string query = $"INSERT INTO Employee VALUES ('{employee.Name}', {employee.Age}, {employee.Salary}, '{employee.City}', '{DateTime.Now.ToLongDateString()}')";
+        using SqlCommand cmd = new SqlCommand(query, conn);
+        await conn.OpenAsync();
+
+        try
+        {
+            bool isInserted = await cmd.ExecuteNonQueryAsync() > 0;
+
+            if (isInserted is true)
+            {
+                return true;
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+        return false;
+
+    }
 }

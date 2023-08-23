@@ -34,4 +34,7 @@ public interface IEmployeeRepository
     /// <param name="id"></param>
     /// <returns></returns>
     Task<bool> DeleteEmployee(int id);
+
+
+    Task<bool> CreateNewEmployee(EmployeeEntity employee);
 }

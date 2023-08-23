@@ -52,11 +52,14 @@ public class EmployeeRepository : IEmployeeRepository
         }
 
         return false;
-
-
     }
 
 
+    /// <summary>
+    /// This method is resposible for delete existing employee from API.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     public async Task<bool> DeleteEmployee(int id)
     {
         HttpResponseMessage isDeleted = await _httpClient.DeleteAsync($"api/employee/DeleteEmployee/{id}");

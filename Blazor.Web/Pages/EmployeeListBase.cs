@@ -66,7 +66,11 @@ public class EmployeeListBase : ComponentBase
     }
 
 
-
+    /// <summary>
+    /// This method is responsible to delete existing employee.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     protected async Task ShowDeleteEmployeeConfirmationAsync(int id)
     {
         var options = new ConfirmDialogOptions

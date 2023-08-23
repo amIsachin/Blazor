@@ -1,0 +1,33 @@
+﻿@page "/newEmployee"
+
+@inherits CreateNewEmployeeBase
+
+<h3>New Employee</h3>
+
+<EditForm EditContext="@editContext" OnSubmit="AddNewEmployee">
+
+    <div class="mb-3">
+        <label class="form-label">Enter Name</label>
+        <InputText class="form-control" @bind-Value="EmployeeEntityWeb.Name" DisplayName="Please enter name"></InputText>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Enter Age</label>
+        <InputNumber class="form-control" @bind-Value="EmployeeEntityWeb.Age" DisplayName="Please enter name"></InputNumber>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Enter Salary</label>
+        <InputNumber class="form-control" @bind-Value="EmployeeEntityWeb.Salary" DisplayName="Please enter name"></InputNumber>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Enter City</label>
+        <InputText class="form-control" @bind-Value="EmployeeEntityWeb.City" DisplayName="Please enter name"></InputText>
+    </div>
+
+    <div class="mb-3">
+        <Button Type="ButtonType.Submit" Color="ButtonColor.Primary">Update Employee</Button>
+    </div>
+
+</EditForm>
