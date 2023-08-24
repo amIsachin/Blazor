@@ -1,8 +1,18 @@
 using Application.Web.Repositories.Implements;
 using Application.Web.Repositories.Interfaces;
 using BlazorBootstrap;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Blazor.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("BlazorWebContextConnection") ?? throw new InvalidOperationException("Connection string 'BlazorWebContextConnection' not found.");
+
+builder.Services.AddDbContext<BlazorWebContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<BlazorWebContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -32,5 +42,6 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+app.UseAuthentication();;
 
 app.Run();

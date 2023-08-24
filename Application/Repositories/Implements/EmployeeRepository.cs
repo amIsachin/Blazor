@@ -136,6 +136,11 @@ public class EmployeeRepository : IEmployeeRepository
     }
 
 
+    /// <summary>
+    /// This method is responsible to add new employee.
+    /// </summary>
+    /// <param name="employee"></param>
+    /// <returns></returns>
     public async Task<bool> CreateNewEmployee(EmployeeEntity employee)
     {
         using SqlConnection conn = new SqlConnection(DataBaseConnection.GetConnectionString());

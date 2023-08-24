@@ -71,4 +71,19 @@ public class EmployeeRepository : IEmployeeRepository
 
         return false;
     }
+
+
+    public async Task<bool> AddNewEmployee(EmployeeEntityWeb employeeEntityWeb)
+    {
+        HttpResponseMessage isInserted = await _httpClient.PostAsJsonAsync<EmployeeEntityWeb>($"api/employee/CreateNewEmployee/", employeeEntityWeb);
+
+        if (isInserted.IsSuccessStatusCode is true)
+        {
+            return true;
+        }
+
+        return false;
+
+
+    }
 }

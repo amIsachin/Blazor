@@ -1,5 +1,9 @@
 ﻿namespace Domain.Web.Entities;
 
+
+/// <summary>
+/// This class entity is system entity please do not change without the permission of project manager.
+/// </summary>
 public class EmployeeEntityWeb
 {
     public int EmployeeId { get; set; }

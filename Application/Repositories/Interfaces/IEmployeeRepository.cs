@@ -36,5 +36,10 @@ public interface IEmployeeRepository
     Task<bool> DeleteEmployee(int id);
 
 
+    /// <summary>
+    /// This method is responsible to add new employee.
+    /// </summary>
+    /// <param name="employee"></param>
+    /// <returns></returns>
     Task<bool> CreateNewEmployee(EmployeeEntity employee);
 }

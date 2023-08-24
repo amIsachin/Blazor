@@ -96,7 +96,7 @@ namespace Blazor.API.Controllers
 
 
         /// <summary>
-        /// This method is responsible to delte existing employee from *Blazor database.
+        /// This method is responsible to delete existing employee from *Blazor database.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -121,6 +121,11 @@ namespace Blazor.API.Controllers
         }
 
 
+        /// <summary>
+        /// This method is responsible to add new employee from *Blazor database.
+        /// </summary>
+        /// <param name="employeeEntity"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> CreateNewEmployee([FromBody] EmployeeEntity employeeEntity)
         {
