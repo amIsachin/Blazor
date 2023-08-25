@@ -174,6 +174,7 @@ namespace Blazor.Web.Areas.Identity.Pages.Account
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
+
             return (IUserEmailStore<IdentityUser>)_userStore;
         }
     }

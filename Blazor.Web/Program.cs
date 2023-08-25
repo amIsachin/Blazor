@@ -18,6 +18,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddBlazorBootstrap();
+builder.Services.AddAuthentication("Identity.Application").AddCookie();
 builder.Services.AddHttpClient<IEmployeeRepository, EmployeeRepository>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:44355/");
@@ -42,6 +43,7 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
-app.UseAuthentication();;
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
