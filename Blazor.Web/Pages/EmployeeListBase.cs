@@ -83,7 +83,7 @@ public class EmployeeListBase : ComponentBase
 
         var confirmation = await dialog.ShowAsync(
             title: "Warning ?",
-            message1: "Do you want to proceed?",
+            message1: "Do you want to proceed ?",
             confirmDialogOptions: options);
 
         if (confirmation is true)

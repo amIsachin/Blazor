@@ -42,6 +42,7 @@ namespace Blazor.API.Controllers
             }
         }
 
+
         /// <summary>
         /// This method is responsible fro retreive employee by id from *Blazor database.
         /// </summary>
